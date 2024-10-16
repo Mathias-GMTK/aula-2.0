@@ -40,6 +40,7 @@ app.get('/item/:id', (req, res) => {
  * Endpoint para criar um novo item
  */
 app.post('/item', (req, res) => {
+    const novo = {id: items.length + 1, ...req.body};
     const { name } = req.body;
     // Validação do campo name
     if (!name || typeof name !== 'string' || name.length < 3) {
